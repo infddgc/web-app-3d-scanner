@@ -1,31 +1,88 @@
-body {
-  background: #0b0f1a;
-  color: white;
-  text-align: center;
-  font-family: Arial;
+body, html {
+  margin: 0;
+  padding: 0;
+  background: black;
+  font-family: sans-serif;
+}
+
+.app {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 
 video {
-  width: 90%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* overlay */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.scan-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  height: 40%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(255,255,255,0.6);
   border-radius: 20px;
-  margin-top: 20px;
 }
 
-.controls {
-  margin: 20px;
-}
-
-button {
-  padding: 12px 18px;
-  margin: 5px;
-  border: none;
-  border-radius: 10px;
-  background: #4f46e5;
+.hint {
+  position: absolute;
+  bottom: 120px;
+  width: 100%;
+  text-align: center;
   color: white;
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 14px;
 }
 
-button:hover {
-  background: #6366f1;
+/* top bar */
+.top-bar {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+  font-size: 18px;
+}
+
+/* controls */
+.controls {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* capture button */
+.capture {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: white;
+  border: 5px solid #888;
+}
+
+/* small buttons */
+button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  color: white;
 }
