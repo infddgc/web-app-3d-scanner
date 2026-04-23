@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>3D Scanner</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scanner</title>
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="app">
+<video id="camera" autoplay playsinline></video>
 
-  <video id="camera" autoplay playsinline></video>
+<!-- overlay -->
+<div class="overlay">
+  <div class="frame"></div>
+  <p class="hint">Обойди объект медленно</p>
+</div>
 
-  <!-- overlay -->
-  <div class="overlay">
-    <div class="scan-frame"></div>
-    <p class="hint">Обойди объект на 360°</p>
-  </div>
+<!-- TOP -->
+<div class="top">
+  <div id="count">0</div>
+  <button id="switch">🔄</button>
+</div>
 
-  <!-- top bar -->
-  <div class="top-bar">
-    <span id="count">0</span>
-    <button id="switch">🔄</button>
-  </div>
+<!-- START BUTTON -->
+<button id="start" class="start-btn">▶ Включить камеру</button>
 
-  <!-- bottom controls -->
-  <div class="controls">
-    <button id="auto">AUTO</button>
-    <button id="capture" class="capture"></button>
-    <button id="finish">OK</button>
-  </div>
-
+<!-- BOTTOM -->
+<div class="bottom">
+  <button id="auto">AUTO</button>
+  <button id="capture" class="capture"></button>
+  <button id="finish">OK</button>
 </div>
 
 <script src="app.js"></script>
