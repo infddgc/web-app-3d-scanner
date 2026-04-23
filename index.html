@@ -7,17 +7,30 @@
 </head>
 <body>
 
-<h1>📷 3D Scanner</h1>
+<div class="app">
 
-<video id="camera" autoplay playsinline></video>
+  <video id="camera" autoplay playsinline></video>
 
-<div class="controls">
-  <button id="capture">📸 Снять</button>
-  <button id="auto">🎥 Авто</button>
-  <button id="finish">✅ Готово</button>
+  <!-- overlay -->
+  <div class="overlay">
+    <div class="scan-frame"></div>
+    <p class="hint">Обойди объект на 360°</p>
+  </div>
+
+  <!-- top bar -->
+  <div class="top-bar">
+    <span id="count">0</span>
+    <button id="switch">🔄</button>
+  </div>
+
+  <!-- bottom controls -->
+  <div class="controls">
+    <button id="auto">AUTO</button>
+    <button id="capture" class="capture"></button>
+    <button id="finish">OK</button>
+  </div>
+
 </div>
-
-<p id="count">Кадров: 0</p>
 
 <script src="app.js"></script>
 </body>
