@@ -9,8 +9,22 @@ let autoMode = false;
 let interval;
 
 // камера
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then(stream => video.srcObject = stream);
+navigator.mediaDevices.getUserMedia({
+  video: {
+    facingMode: { exact: "environment" }
+  }
+})
+.then(stream => {
+  video.srcObject = stream;
+})
+.catch(err => {
+  console.log("Ошибка, пробую fallback:", err);
+
+  // fallback если exact не сработал
+  return navigator.mediaDevices.getUserMedia({
+    video: { facingMode: "environment" }
+  }).then(stream => video.srcObject = stream);
+});
 
 // сделать кадр
 function capture() {
